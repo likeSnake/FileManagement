@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/zip_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/layout_sharp_zip"
+        >
+
+        <ImageView
+            android:id="@+id/iv_zip"
+            android:layout_width="42dp"
+            android:layout_height="48dp"
+            android:adjustViewBounds="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:src="@mipmap/ic_zip"
+            android:scaleType="centerCrop" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/iv_zip"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/select"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/zip_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="casoidbngfaiusdbcalo.zip"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/zip_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6.99MB"
+                    android:textColor="#838383"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/zip_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08-01-2022"
+                    android:layout_marginStart="15dp"
+                    android:textColor="#838383"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/select"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/select_no" />
+    </RelativeLayout>
+
+
+</LinearLayout>

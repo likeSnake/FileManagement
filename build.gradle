@@ -1,0 +1,66 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        agp_version = '7.4.0'
+    }
+    repositories {
+        google()
+        mavenCentral()
+
+        maven { url 'https://maven.google.com' }
+        maven { url "https://jitpack.io" }
+        maven() {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven(){
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/mapr-public'
+        }
+
+        //Anythink(Core)
+        maven {
+            url "https://jfrog.anythinktech.com/artifactory/overseas_sdk"
+        }
+
+//        maven {
+//            url "https://anythink.jfrog.io/artifactory/android_sdk"
+//        }
+        //Vungle
+        maven {
+            url "https://s01.oss.sonatype.org/content/groups/staging/"
+        }
+
+        //Ironsource
+        maven {
+            url "https://android-sdk.is.com/"
+        }
+
+        //Pangle
+        maven {
+            url "https://artifact.bytedance.com/repository/pangle"
+        }
+
+        //Mintegral
+        maven {
+            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea"
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$agp_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        classpath 'com.github.megatronking.stringfog:gradle-plugin:5.1.0'
+        // 选用加解密算法库，默认实现了xor算法，也可以使用自己的加解密库。
+        classpath 'com.github.megatronking.stringfog:xor:5.0.0'
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,137 @@
+plugins {
+    id 'com.android.application'
+
+    id 'stringfog'
+}
+
+// 导入RandomKeyGenerator类，如果使用HardCodeKeyGenerator，更换下类名
+import com.github.megatronking.stringfog.plugin.kg.RandomKeyGenerator
+import com.github.megatronking.stringfog.plugin.StringFogMode
+
+android {
+    compileSdk 34
+    namespace 'net.management.utility.file.manager'
+    defaultConfig {
+        applicationId "net.management.utility.file.manager"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //compileSdkVersion 34
+}
+
+stringfog {
+    // 必要：加解密库的实现类路径，需和上面配置的加解密算法库一致。
+    implementation 'com.github.megatronking.stringfog.xor.StringFogImpl'
+    // 可选：StringFog会自动尝试获取packageName，如果遇到获取失败的情况，可以显式地指定。
+    packageName 'com.github.megatronking.stringfog.app'
+    // 可选：加密开关，默认开启。
+    enable true
+    // 可选：指定需加密的代码包路径，可配置多个，未指定将默认全部加密。
+    //fogPackages = ['com.xxx.xxx']
+    // 可选（3.0版本新增）：指定密钥生成器，默认使用长度8的随机密钥（每个字符串均有不同随机密钥）,
+    // 也可以指定一个固定的密钥：HardCodeKeyGenerator("This is a key")
+    kg new RandomKeyGenerator()
+    // 可选（4.0版本新增）：用于控制字符串加密后在字节码中的存在形式, 默认为base64，
+    // 也可以使用text或者bytes
+    mode StringFogMode.base64
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.tencent:mmkv:1.2.13'
+    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'com.wang.avi:library:2.1.3'
+
+    //Anythink (Necessary)
+    api "com.anythink.sdk:core:6.2.65"
+    api "com.anythink.sdk:nativead:6.2.65"
+    api "com.anythink.sdk:banner:6.2.65"
+    api "com.anythink.sdk:interstitial:6.2.65"
+    api "com.anythink.sdk:rewardedvideo:6.2.65"
+    api "com.anythink.sdk:splash:6.2.65"
+
+    //Androidx (Necessary)
+    api "androidx.appcompat:appcompat:1.1.0"
+    api "androidx.browser:browser:1.4.0"
+
+    //Vungle
+    api "com.anythink.sdk:adapter-vungle:6.2.65"
+    api "com.vungle:publisher-sdk-android:6.12.1"
+    api "androidx.core:core:1.3.2"
+    api "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
+    api "com.google.android.gms:play-services-basement:18.1.0"
+    api "com.google.android.gms:play-services-ads-identifier:18.0.1"
+
+    //UnityAds
+    api "com.anythink.sdk:adapter-unityads:6.2.65"
+    api "com.unity3d.ads:unity-ads:4.8.0"
+
+    //Ironsource
+    api "com.anythink.sdk:adapter-ironsource:6.2.65"
+    api "com.ironsource.sdk:mediationsdk:7.3.1.1"
+    api "com.google.android.gms:play-services-appset:16.0.2"
+    api "com.google.android.gms:play-services-ads-identifier:18.0.1"
+    api "com.google.android.gms:play-services-basement:18.1.0"
+
+    //AdColony
+    api "com.anythink.sdk:adapter-adcolony:6.2.65"
+    api "com.adcolony:sdk:4.8.0"
+    api "com.google.android.gms:play-services-ads-identifier:18.0.1"
+
+    //Pangle
+    api "com.anythink.sdk:adapter-pangle-nonchina:6.2.65"
+    api "com.pangle.global:ads-sdk:5.4.0.9"
+    api "com.google.android.gms:play-services-ads-identifier:18.0.1"
+
+    //Inmobi
+    api "com.anythink.sdk:adapter-inmobi:6.2.65"
+    api "com.inmobi.monetization:inmobi-ads-kotlin:10.5.7"
+
+    //AppLovin
+    api "com.anythink.sdk:adapter-applovin:6.2.65"
+    api "com.applovin:applovin-sdk:11.10.1"
+
+    //Mintegral
+    api "com.anythink.sdk:adapter-mintegral-nonchina:6.2.65.1"
+    api "com.mbridge.msdk.oversea:reward:16.5.11"
+    api "com.mbridge.msdk.oversea:newinterstitial:16.5.11"
+    api "com.mbridge.msdk.oversea:mbnative:16.5.11"
+    api "com.mbridge.msdk.oversea:mbnativeadvanced:16.5.11"
+    api "com.mbridge.msdk.oversea:mbsplash:16.5.11"
+    api "com.mbridge.msdk.oversea:mbbanner:16.5.11"
+    api "com.mbridge.msdk.oversea:mbbid:16.5.11"
+    api "androidx.recyclerview:recyclerview:1.1.0"
+
+//Tramini
+    api "com.anythink.sdk:tramini-plugin:6.2.65"
+
+    // 这里要和上面选用的加解密算法库一致，用于运行时解密。
+    implementation 'com.github.megatronking.stringfog:xor:5.0.0'
+
+}

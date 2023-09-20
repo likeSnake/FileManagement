@@ -1,0 +1,53 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        maven { url 'https://maven.google.com' }
+        maven { url "https://jitpack.io" }
+        maven() {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven(){
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/mapr-public'
+        }
+
+
+        //Anythink(Core)
+        maven {
+            url "https://jfrog.anythinktech.com/artifactory/overseas_sdk"
+        }
+
+//        maven {
+//            url "https://anythink.jfrog.io/artifactory/android_sdk"
+//        }
+        //Vungle
+        maven {
+            url "https://s01.oss.sonatype.org/content/groups/staging/"
+        }
+
+        //Ironsource
+        maven {
+            url "https://android-sdk.is.com/"
+        }
+
+        //Pangle
+        maven {
+            url "https://artifact.bytedance.com/repository/pangle"
+        }
+
+        //Mintegral
+        maven {
+            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea"
+        }
+    }
+}
+rootProject.name = "FileManagements"
+include ':app'

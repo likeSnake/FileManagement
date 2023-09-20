@@ -1,0 +1,26 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/drawable/bt_sharp.xml" value="0.23229166666666667" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/drawable/bt_sharp_delect.xml" value="0.40260416666666665" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/drawable/layout_sharp.xml" value="0.40260416666666665" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/drawable/layout_sharp_zip.xml" value="0.40260416666666665" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/layout/act_main.xml" value="0.33" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/layout/act_photo.xml" value="0.365036231884058" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/layout/act_video.xml" value="0.365036231884058" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/layout/act_zip.xml" value="0.365036231884058" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/layout/activity_main.xml" value="0.365036231884058" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/layout/item_photo.xml" value="0.365036231884058" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/layout/item_video.xml" value="0.365036231884058" />
+        <entry key="..\:/code/Za/FileManagements/app/src/main/res/layout/item_zip.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
